@@ -9,9 +9,8 @@
     console.log(element);
   });
 };*/
-const logger = (array) => array.forEach((element) => console.log(element));
-logger([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-
+const logger = (array) =>
+  array.forEach((temperature) => console.log(temperature));
 /*************************************
  * toCelsius(temperatures)
  *
@@ -29,8 +28,7 @@ logger([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   });
 };*/
 const toCelsius = (temperatures) =>
-  temperatures.map((element) => (element - 32) * (5 / 9));
-console.log(toCelsius([34, 120, 55, 84, 71]));
+  temperatures.map((temperature) => (temperature - 32) * (5 / 9));
 /**************************************
  * hottestDays(temperatures, threshhold)
  *
@@ -45,9 +43,8 @@ console.log(toCelsius([34, 120, 55, 84, 71]));
   });
 };*/
 const hottestDays = (temperatures, threshhold) =>
-  temperatures.filter((element) => element > threshhold);
-const listTemp = [53, 48, 20, 9, 60, 31];
-console.log(hottestDays(listTemp, 50));
+  temperatures.filter((temperature) => temperature > threshhold);
+
 /******************************************
  * logHottestDays(temperatures, threshhold)
  *
@@ -67,10 +64,12 @@ console.log(hottestDays(listTemp, 50));
   return hottestDays(toCelsius(temperatures), toCelsius(threshhold));
 };*/
 const logHottestDays = function (temperatures, threshhold) {
-  threshhold = [threshhold];
-  return hottestDays(toCelsius(temperatures), toCelsius(threshhold));
+  logger(toCelsius(hottestDays(temperatures, threshhold)));
+  // const hottestdays = hottestDays(temperatuers, threshold);
+  // const celsius = toCelsius(hottestdays);
+  // logger(celsius);
 };
-console.log(logHottestDays([140, 68, 212, 45, 149, 122, 19], 80));
+
 /* Uncomment the following lines to test your code... */
 
 logger([1, 2, 3, 4, 5, 6, 7]);
